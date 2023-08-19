@@ -1,0 +1,31 @@
+<div class="main">
+  <div class="inner">
+      <h2 class="page-heading">新規プロトタイプ投稿</h2>
+
+      <%= form_with model: @prototype, local: true, html: { class: 'form__wrapper' } do |f| %>
+        <div class="field">
+          <%= f.label :title, "プロトタイプの名称" %><br />
+          <%= f.text_field :title, class: 'form__text' %>
+        </div>
+
+        <div class="field">
+          <%= f.label :catch_copy, "キャッチコピー" %><br />
+          <%= f.text_area :catch_copy, class: 'form__text' %>
+        </div>
+
+        <div class="field">
+          <%= f.label :concept, "コンセプト" %><br />
+          <%= f.text_area :concept, class: 'form__text' %>
+        </div>
+
+        <div class="field">
+          <%= f.label :image, "プロトタイプの画像1枚" %><br />
+          <%= f.file_field :image %>
+        </div>
+        
+        <div class="actions">
+          <%= f.submit "投稿する", class: 'form__btn' %>
+        </div>
+      <% end %>
+  </div>
+</div>

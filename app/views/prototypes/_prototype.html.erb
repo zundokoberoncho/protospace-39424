@@ -1,0 +1,11 @@
+<ul class="card__wrapper">
+    <li class="prototype__wrapper">
+      <%= image_tag prototype.image, class: "prototype__image" if prototype.image.attached? %>
+      <h2 class="prototype__hedding"><%= prototype.title %></h2>
+      <p class="prototype__detail"><%= prototype.catch_copy %></p>
+      <div class="prototype__user">
+        <%= link_to "by #{prototype.user.name}", user_path(prototype.user) %>
+      </div>
+    </li>
+
+</ul>
