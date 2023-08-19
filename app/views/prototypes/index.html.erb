@@ -11,18 +11,12 @@
       <% @prototypes.each do |prototype| %>
         <div class="card">
           <%= link_to prototype_path(prototype) do %>
-            <% if prototype.image.attached? %>
-              <%= image_tag prototype.image, class: "card__img" %>
-            <% end %>
+            <%= image_tag prototype.image, class: "prototype__image" if prototype.image.attached? %>
+            <h2 class="prototype__hedding"><%= prototype.title %></h2>
           <% end %>
           <h2 class="card__title"><%= prototype.title %></h2>
           <p class="card__summary"><%= prototype.catch_copy %></p>
-
-          <% if user_signed_in? && current_user.id == prototype.user_id %>
-            <div class="card__user">
-              <%= link_to "by #{prototype.user.name}", user_path(prototype.user), class: "card__user" %>
-            </div>
-          <% end %>
+          <p class="card__user"><%= link_to "by #{prototype.user.name}", user_path(prototype.user), class: "card__user" %></p>
         </div>
       <% end %>
     </div>
