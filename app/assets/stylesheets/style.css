@@ -199,9 +199,9 @@ a {
   padding-top: 16px;
 }
 .prototype__btn{
-  display: flex
-  padding: 16px;
-  font-size: 15px;
+  display: flex;
+  padding: 0.4em 1.6em;
+  font-size: 0.4em;
   color: #999;
   text-decoration: none;
   user-select: none;
@@ -228,6 +228,7 @@ a {
 .comments_list{
   list-style-type: square;
   padding-bottom: 5px;
+  list-style: none; /* リストマーカーを非表示にする */
 }
 
 .comment_user{
